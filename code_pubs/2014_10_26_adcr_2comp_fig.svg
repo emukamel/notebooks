@@ -16,10 +16,10 @@
    width="889.414"
    id="svg2"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="two_comp_fig.svg"
-   inkscape:export-filename="/home/alex/Dropbox/sandbox/two_comp_fig.png"
-   inkscape:export-xdpi="400"
-   inkscape:export-ydpi="400">
+   sodipodi:docname="2014_10_26_adcr_2comp_fig.svg"
+   inkscape:export-filename="/home/alex/Dropbox/Figs_Images/two_comp_fig.png"
+   inkscape:export-xdpi="1000"
+   inkscape:export-ydpi="1000">
   <metadata
      id="metadata441">
     <rdf:RDF>
@@ -28,7 +28,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -45,9 +45,9 @@
      inkscape:window-height="876"
      id="namedview439"
      showgrid="false"
-     inkscape:zoom="1.1470843"
-     inkscape:cx="274.2481"
-     inkscape:cy="772.87142"
+     inkscape:zoom="1"
+     inkscape:cx="389.01745"
+     inkscape:cy="527.74244"
      inkscape:window-x="65"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
@@ -1708,7 +1708,7 @@
   <g
      id="matplotlib.axis_11-2"
      style="fill:#000000;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-334.0027,-322.84159)">
+     transform="matrix(1.2762816,0,0,1.2762816,-468.01952,-433.61664)">
     <g
        id="text_14-5"
        style="fill:#000000;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round">
@@ -1741,7 +1741,7 @@
   <g
      id="matplotlib.axis_11-2-9"
      style="fill:#000000;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-194.04486,-322.84159)">
+     transform="matrix(1.2762816,0,0,1.2762816,-327.65729,-433.61664)">
     <g
        id="text_14-5-8"
        style="fill:#000000;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round">
@@ -2154,7 +2154,7 @@
   <g
      id="matplotlib.axis_11-2-8"
      style="fill:#000000;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(-10.507136,-322.84159)">
+     transform="matrix(1.2762816,0,0,1.2762816,-144.52395,-433.61664)">
     <g
        id="text_14-5-1"
        style="fill:#000000;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round">
@@ -2187,7 +2187,7 @@
   <g
      id="matplotlib.axis_11-2-9-9"
      style="fill:#000000;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round"
-     transform="translate(132.70397,-322.84159)">
+     transform="matrix(1.2762816,0,0,1.2762816,-0.90846144,-433.61664)">
     <g
        id="text_14-5-8-9"
        style="fill:#000000;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round">
@@ -2218,7 +2218,7 @@
     </g>
   </g>
   <g
-     transform="translate(-301.53864,-355.82629)"
+     transform="translate(-348.96323,-355.82629)"
      style="fill:#ff0000;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round"
      id="text_14-5-9">
     <!-- 1 s -->
@@ -2239,7 +2239,7 @@
          x="515.16113"
          style="font-size:109.22431183px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans"
          xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#ff0000;fill-opacity:1;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Medium"
+           style="font-size:200px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#ff0000;fill-opacity:1;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Medium"
            y="12.105018"
            x="515.16113"
            id="tspan4123-1-4"
@@ -2247,7 +2247,7 @@
     </g>
   </g>
   <g
-     transform="translate(22.875811,-365.54839)"
+     transform="translate(-28.035879,-365.54839)"
      style="fill:#0000ff;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:round"
      id="text_14-5-9-6">
     <!-- 1 s -->
@@ -2268,7 +2268,7 @@
          x="515.16113"
          style="font-size:109.22431183px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;font-family:Sans"
          xml:space="preserve"><tspan
-           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#0000ff;fill-opacity:1;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Medium"
+           style="font-size:200px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#0000ff;fill-opacity:1;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Medium"
            y="93.122711"
            x="515.16113"
            id="tspan4123-1-4-9"
@@ -10750,13 +10750,13 @@
      transform="matrix(0,-1,1,0,0,0)"
      sodipodi:linespacing="125%"
      id="text4121-3-20"
-     y="53.987995"
-     x="-248.81609"
-     style="font-size:13.10691738px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+     y="55.054436"
+     x="-259.26657"
+     style="font-size:16.72811699px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
      xml:space="preserve"><tspan
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#000000;fill-opacity:1;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Medium"
-       y="53.987995"
-       x="-248.81609"
+       y="55.054436"
+       x="-259.26657"
        id="tspan4123-1-1"
        sodipodi:role="line">steady-state</tspan></text>
   <path
@@ -10773,13 +10773,13 @@
      transform="matrix(0,-1,1,0,0,0)"
      sodipodi:linespacing="125%"
      id="text4121-3-20-4"
-     y="56.281704"
-     x="-115.49704"
-     style="font-size:13.10691738px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+     y="57.665001"
+     x="-120.42758"
+     style="font-size:16.72811699px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
      xml:space="preserve"><tspan
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#000000;fill-opacity:1;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Medium"
-       y="56.281704"
-       x="-115.49704"
+       y="57.665001"
+       x="-120.42758"
        id="tspan4123-1-1-5"
        sodipodi:role="line">initial </tspan></text>
   <text
@@ -10986,15 +10986,15 @@
        y="731.41559" /></text>
   <text
      xml:space="preserve"
-     style="font-size:18.04131508px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-     x="127.872"
-     y="310.48166"
+     style="font-size:19.89054871px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+     x="103.07395"
+     y="311.02625"
      id="text4121-3-6-3-1-0-8-8-9-1-8"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
        id="tspan4123-1-7-9-3-3-18-1-9-3-9"
-       x="127.872"
-       y="310.48166"
+       x="103.07395"
+       y="311.02625"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:Ubuntu;-inkscape-font-specification:Ubuntu Medium">Correlations between steady-state maximal conductances</tspan></text>
   <text
      xml:space="preserve"
