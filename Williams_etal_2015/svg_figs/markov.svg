@@ -17,8 +17,8 @@
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="markov.svg"
    inkscape:export-filename="/home/alex/Dropbox/notebooks/Williams_etal_2015/svg_figs/markov.png"
-   inkscape:export-xdpi="500"
-   inkscape:export-ydpi="500">
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300">
   <defs
      id="defs6205">
     <clipPath
@@ -24849,7 +24849,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="418.20563"
+     inkscape:cx="248.20563"
      inkscape:cy="542.71779"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -44834,50 +44834,54 @@
     <text
        xml:space="preserve"
        style="font-size:32.58024979px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="49.969559"
-       y="177.09488"
-       id="text21445-4"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan21447-6"
-         x="49.969559"
-         y="177.09488"
-         style="font-weight:bold">A</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:32.58024979px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="340.24979"
+       x="350.24979"
        y="177.09488"
        id="text21445-4-9"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan21447-6-2"
-         x="340.24979"
+         x="350.24979"
          y="177.09488"
-         style="font-weight:bold">B</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:32.58024979px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="61.077423"
-       y="418.52347"
-       id="text21445-4-4"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan21447-6-7"
-         x="61.077423"
-         y="418.52347"
          style="font-weight:bold">C</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:32.58024979px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="371.39264"
+       x="366.88168"
        y="418.9848"
        id="text21445-4-0"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan21447-6-4"
-         x="371.39264"
+         x="366.88168"
          y="418.9848"
          style="font-weight:bold">D</tspan></text>
+    <g
+       id="g12843"
+       transform="translate(-172.55289,-36.842183)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text21445-4-9-4"
+         y="213.50754"
+         x="221.05888"
+         style="font-size:32.58024979px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-weight:bold"
+           y="213.50754"
+           x="221.05888"
+           id="tspan21447-6-2-3"
+           sodipodi:role="line">A</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text21445-4-0-7"
+         y="455.39746"
+         x="237.69078"
+         style="font-size:32.58024979px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-weight:bold"
+           y="455.39746"
+           x="237.69078"
+           id="tspan21447-6-4-5"
+           sodipodi:role="line">B</tspan></text>
+    </g>
   </g>
 </svg>
