@@ -1,6 +1,6 @@
 function l = data_likelihood_update_betabernoulli(X,G0alphabeta,c,phi,cnt)
   %[,W] = size(X);
-  M     = length(c);
+  M = length(c);
   
   if M <= 1,
     l = data_likelihood_betabernoulli(X,G0alphabeta,c);
