@@ -123,3 +123,4 @@ function beta_binomial_likelihood(Xc,G)
                lgamma(G["a"]) - 
                lgamma(G["b"]))
 end
+
