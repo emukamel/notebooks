@@ -1,5 +1,5 @@
-using Color
 using PyPlot
+using Color
 
 function get_colors(N)
     h = 0
@@ -25,7 +25,9 @@ function plot_meth(X,c)
     for n = ind
         plot([0.5,W+0.5],[y,y],"-",color=col[:,c[n]])
         for w = 1:W
-            if X[n,w]
+        	if isnan(X[n,w])
+        		continue
+	        elseif X[n,w] == 1.0
                 plot(w,y,"o",color=col[:,c[n]])
             else
                 plot(w,y,"o",color=col[:,c[n]],mfc="w")
@@ -124,3 +126,36 @@ function beta_binomial_likelihood(Xc,G)
                lgamma(G["b"]))
 end
 
+function generate_reads(;N=100,W=21,L=100,Cprob=[0.3, 0.7],alpha=1,beta=1)
+	# Generate synthetic data of overlapping reads
+    # -----------------------------
+    # N = number of reads
+    # W = methylation sites per read
+    # L = number of methylation-eligible sites
+    # Cprob = array listing the proportions of cell types
+    # alpha/beta = parameters for beta distribution (prior)
+    X = zeros(N,L)
+    c = zeros(N)
+    nC = length(Cprob) # number of cell types
+    cumC = cumsum(Cprob) - Cprob[1]
+    P = rand(Beta(alpha,beta),(nC,L))
+
+    if floor(W/2) == W/2
+    	W += 1 # make sure W is odd
+    end
+
+    X = zeros(N,L)
+    fill!(X, NaN)
+    for i = 1:N
+    	m = rand(1:L) # middle point of read
+    	c[i] = find((i/N) .> cumC)[end] # current cluster
+    	s1 = maximum([1,m-floor(W/2)])
+    	s2 = minimum([L,m+floor(W/2)])
+
+    	for w = s1:s2
+    		X[i,w] = rand(Bernoulli(P[c[i],w]))
+    	end
+    end
+
+    return X,P,c
+end
