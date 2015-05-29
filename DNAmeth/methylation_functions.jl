@@ -153,7 +153,11 @@ function generate_reads(;N=100,W=21,L=100,Cprob=[0.3, 0.7],alpha=1,beta=1)
     	s2 = minimum([L,m+floor(W/2)])
 
     	for w = s1:s2
-    		X[i,w] = rand(Bernoulli(P[c[i],w]))
+    		if rand(Bernoulli(P[c[i],w])) == 1
+    			X[i,w] = 1.0
+    		else
+    			X[i,w] = -1.0
+    		end
     	end
     end
 
