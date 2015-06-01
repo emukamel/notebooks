@@ -52,10 +52,12 @@ function plot_meth_avg(X,c)
     N,W = size(X)
     
     for cc = 1:nc
-        Xavg = mean(X[c .== cc,:],1)
         plot([0.5,W+0.5],[cc,cc],"-",color=col[:,cc])
+        Xavg = zeros(1,W)
         for w = 1:W
-            color = Xavg[w]*col[:,cc] + (1- Xavg[w])*[1,1,1];
+            xx = (1+X[c .== cc,w])/2
+            xavg = mean(xx[!isnan(xx)])
+            color = xavg*col[:,cc] + (1-xavg)*[1,1,1];
             plot(w,cc,"o",color=color)
         end
     end
@@ -162,4 +164,17 @@ function generate_reads(;N=100,W=21,L=100,Cprob=[0.3, 0.7],alpha=1,beta=1)
     end
 
     return X,P,c
+end
+
+function find_observations(A)
+    m,n = size(A)
+    obs = (Int64,Int64)[]
+    for i = 1:m
+        for j = 1:n
+            if ~isnan(A[i,j])
+                push!(obs,(i,j))
+            end
+        end
+    end
+    return obs
 end
