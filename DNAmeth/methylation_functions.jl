@@ -1,5 +1,6 @@
 using PyPlot
-using Color
+import Color: convert, HSL, RGB
+using Optim
 
 function get_colors(N)
     h = 0
@@ -68,8 +69,8 @@ function plot_meth_avg(X,c)
     title("average methylation pattern")
 end
 
-function generate_data(;N=30,W=10)
-    # Blackwell-MacQueen urn scheme
+function blackwell_macqueen(;N=30,W=10)
+    # Blackwell-MacQueen urn scheme to generate reads
     # -----------------------------
     # N = number of reads
     # W = methylation sites per read
@@ -128,7 +129,7 @@ function beta_binomial_likelihood(Xc,G)
                lgamma(G["b"]))
 end
 
-function generate_reads(;N=100,W=21,L=100,Cprob=[0.3, 0.7],alpha=1,beta=1)
+function generate_reads(;N=100,W=21,L=100,Cprob=[0.3, 0.7],alpha=1,beta=1,targ_dist=NaN)
 	# Generate synthetic data of overlapping reads
     # -----------------------------
     # N = number of reads
@@ -136,18 +137,24 @@ function generate_reads(;N=100,W=21,L=100,Cprob=[0.3, 0.7],alpha=1,beta=1)
     # L = number of methylation-eligible sites
     # Cprob = array listing the proportions of cell types
     # alpha/beta = parameters for beta distribution (prior)
-    X = zeros(N,L)
+    X = fill(NaN,(N,L))
     c = zeros(N)
     nC = length(Cprob) # number of cell types
     cumC = cumsum(Cprob) - Cprob[1]
-    P = rand(Beta(alpha,beta),(nC,L))
+
+    if isnan(targ_dist)
+        # generate random methylation probabilities
+        P = rand(Beta(alpha,beta),(nC,L))
+    else
+        # generate probabilities that have specified distance
+        assert(nC == 2) 
+        P = generate_patterns_JSdist(L,targ_dist)
+    end
 
     if floor(W/2) == W/2
     	W += 1 # make sure W is odd
     end
 
-    X = zeros(N,L)
-    fill!(X, NaN)
     for i = 1:N
     	m = rand(1:L) # middle point of read
     	c[i] = find((i/N) .> cumC)[end] # current cluster
@@ -166,15 +173,62 @@ function generate_reads(;N=100,W=21,L=100,Cprob=[0.3, 0.7],alpha=1,beta=1)
     return X,P,c
 end
 
-function find_observations(A)
-    m,n = size(A)
-    obs = (Int64,Int64)[]
-    for i = 1:m
-        for j = 1:n
-            if ~isnan(A[i,j])
-                push!(obs,(i,j))
-            end
+
+
+##
+## Functions to initialize methylation probabilities
+##
+
+function d_kl_bern(p,q)
+    ## Kulback-Leibler divergence for two Bernoulli variables with probabilities p and q
+    return p*log2(p./q)+(1-p)*log2((1-p)/(1-q))
+end
+
+function d_js_bern(p1,p2)
+    ## Jenson-Shannon divergence for two Bernoulli variables with probabilities p1 and p2
+    m = 0.5*(p1+p2)
+    return 0.5*d_kl_bern(p1,m) + 0.5*d_kl_bern(p2,m)
+end
+
+function d_js_multivar_bern(x::Vector,y::Vector)
+    ## Jenson-Shannon divergence between two multivariate Bernoulli variables
+    dist = 0
+    for i=1:length(x)/2
+        dist += d_js_bern(x[i],y[i])
+    end
+    return dist
+end
+
+function impose_bounds!(x::Vector)
+    x[x.>1] = 1
+    x[x.<=0] = eps()
+end
+
+function generate_patterns_JSdist(n,targ_dist;max_iter=20)
+    ## n = number of methylation sites
+    ## targ_dist = target Jensen-Shannon divergence
+    function f(x::Vector)
+        impose_bounds!(x)
+        return abs(d_js_multivar_bern(x[1:end/2],x[1+end/2:end]))
+    end
+    df = Optim.autodiff(x->abs(f(x)-targ_dist), Float64, n*2)
+    
+    converged = false
+    iter = 0
+    y = NaN
+    while !converged && iter < max_iter
+        try
+            y = fminbox(df,rand(n*2),zeros(n*2),ones(n*2))
+            converged = true
+        catch
+            println("didnt converge, trying again")
+            iter +=1
         end
     end
-    return obs
+    if converged
+        p1,p2 = y.minimum[1:end/2],y.minimum[1+end/2:end]
+        return [p1'; p2']
+    else
+        error("Unable to find solution")
+    end
 end
